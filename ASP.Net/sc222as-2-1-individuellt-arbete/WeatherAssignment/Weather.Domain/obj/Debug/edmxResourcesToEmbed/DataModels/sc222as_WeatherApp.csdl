@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sc222as_WeatherAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Pk_City_Id" />
+    </Key>
+    <Property Name="Pk_City_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NextUpdate" Type="DateTime" Precision="7" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ScreenName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Weathers" Relationship="Self.FK__Weather__Fk_City__2C3393D0" FromRole="City" ToRole="Weather" />
+  </EntityType>
+  <EntityType Name="Weather">
+    <Key>
+      <PropertyRef Name="Pk_Weather_Id" />
+    </Key>
+    <Property Name="Pk_Weather_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Temp1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Temp2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Temp3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Temp4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Temp5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Icon1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Icon2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Icon3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Icon4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Icon5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created1" Type="DateTime" Precision="7" />
+    <Property Name="Created2" Type="DateTime" Precision="7" />
+    <Property Name="Created3" Type="DateTime" Precision="7" />
+    <Property Name="Created4" Type="DateTime" Precision="7" />
+    <Property Name="Created5" Type="DateTime" Precision="7" />
+    <Property Name="Fk_City_Id" Type="Int32" />
+    <NavigationProperty Name="City" Relationship="Self.FK__Weather__Fk_City__2C3393D0" FromRole="Weather" ToRole="City" />
+  </EntityType>
+  <Association Name="FK__Weather__Fk_City__2C3393D0">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Weather" Type="Self.Weather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Pk_City_Id" />
+      </Principal>
+      <Dependent Role="Weather">
+        <PropertyRef Name="Fk_City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sc222as_WeatherAppEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Weathers" EntityType="Self.Weather" />
+    <AssociationSet Name="FK__Weather__Fk_City__2C3393D0" Association="Self.FK__Weather__Fk_City__2C3393D0">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Weather" EntitySet="Weathers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

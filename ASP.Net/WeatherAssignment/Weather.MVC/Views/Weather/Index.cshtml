@@ -1,0 +1,42 @@
+﻿@model WeatherApp.ViewModels.WeatherIndexViewModel
+
+
+@{
+    ViewBag.Title = "WeatherApp";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, String.Empty, new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ScreenName, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ScreenName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ScreenName, String.Empty, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <input type="submit" value="Get Weather" class="btn btn-primary btn-sm" />
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model != null && Model.HasWeather)
+{
+    <div id="tweets">
+        <h2>
+            The weather in the city: @Model.Name
+        </h2> 
+        @Html.DisplayFor(m => m.Weathers)
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

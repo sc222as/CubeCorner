@@ -1,0 +1,54 @@
+﻿
+<!DOCTYPE html>
+<html lang="sv">
+<meta charset="utf-8"/> 
+<head>
+<title>Validering - Webbteknik</title>
+<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="content">
+<form id="formen" name="form" method="post" action="http://voyager.lnu.se/tekinet/kurser/dtt/wp_webbteknik/process_form.php">
+<fieldset id="fieldset">
+<legend>Formulärvalidering</legend>
+<p>
+	<p class="label">First Name:<p>
+	<input id="firstname" type="fn" name="firstname">
+</p>
+<p>
+	<p class="label">Last Name:<p>
+	<input id="lastname" type="ln" name="lastname">
+</p>
+<p>
+	<p class="label">Zip Code:<p>
+	<input id="zipcode" type="pn" name="zipcode">
+</p>
+<p>
+	<p class="label">Phone number<p>
+	<input id="phone" type="ph" name="phone">
+</p>
+<p>
+	<p class="label">E-mail:<p>
+	<input id="mail" type="ma" name="mail">
+</p>
+<p>
+	<p class="label">Price</p>
+	<select id="Price" name="Price">
+		<option value="High">High</option>
+		<option value="Low">Low</option>
+	</select>
+</p>
+<p>
+
+	<label for="submit"> </label>
+	<input id="button1" type="submit" name="button1" value="Send!">
+
+</p>
+
+</fieldset>
+</form>
+</div>
+<script type="text/javascript" src="validator2.js"></script>
+</body>
+</html>
+

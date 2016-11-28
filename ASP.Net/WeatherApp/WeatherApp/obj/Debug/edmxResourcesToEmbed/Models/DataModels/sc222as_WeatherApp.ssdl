@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sc222as_WeatherAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Pk_City_Id" />
+    </Key>
+    <Property Name="Pk_City_Id" Type="int" Nullable="false" />
+    <Property Name="NextUpdate" Type="datetime2" Precision="7" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="ScreenName" Type="varchar" MaxLength="50" />
+    <Property Name="ID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Weather">
+    <Key>
+      <PropertyRef Name="Pk_Weather_Id" />
+    </Key>
+    <Property Name="Pk_Weather_Id" Type="int" Nullable="false" />
+    <Property Name="Temp1" Type="varchar" MaxLength="50" />
+    <Property Name="Temp2" Type="varchar" MaxLength="50" />
+    <Property Name="Temp3" Type="varchar" MaxLength="50" />
+    <Property Name="Temp4" Type="varchar" MaxLength="50" />
+    <Property Name="Temp5" Type="varchar" MaxLength="50" />
+    <Property Name="Icon1" Type="varchar" MaxLength="50" />
+    <Property Name="Icon2" Type="varchar" MaxLength="50" />
+    <Property Name="Icon3" Type="varchar" MaxLength="50" />
+    <Property Name="Icon4" Type="varchar" MaxLength="50" />
+    <Property Name="Icon5" Type="varchar" MaxLength="50" />
+    <Property Name="Created1" Type="datetime2" Precision="7" />
+    <Property Name="Created2" Type="datetime2" Precision="7" />
+    <Property Name="Created3" Type="datetime2" Precision="7" />
+    <Property Name="Created4" Type="datetime2" Precision="7" />
+    <Property Name="Created5" Type="datetime2" Precision="7" />
+    <Property Name="Fk_City_Id" Type="int" />
+  </EntityType>
+  <Association Name="FK__Weather__Fk_City__0519C6AF">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Weather" Type="Self.Weather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Pk_City_Id" />
+      </Principal>
+      <Dependent Role="Weather">
+        <PropertyRef Name="Fk_City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sc222as_WeatherAppModelStoreContainer">
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Weather" EntityType="Self.Weather" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Weather__Fk_City__0519C6AF" Association="Self.FK__Weather__Fk_City__0519C6AF">
+      <End Role="City" EntitySet="City" />
+      <End Role="Weather" EntitySet="Weather" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

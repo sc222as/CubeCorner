@@ -1,0 +1,30 @@
+
+h1 {color:#D3649F;}
+body
+{
+background-color: #4FD5D6;
+text-align:center;
+}
+
+#textfalt
+{
+    height:200px;
+    width:250px;
+    overflow:auto;
+    margin: 15px;
+    
+    
+}
+
+#meddelanden{
+max-height:350px;
+padding:5px;
+overflow:auto;
+
+
+
+}
+.buttons{
+float:right;
+margin: 0px 24px;
+}

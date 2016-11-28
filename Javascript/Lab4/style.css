@@ -1,0 +1,82 @@
+
+
+#fieldset{
+	border: 0px;
+}
+
+#content{
+	
+	margin: 60px auto;
+	width: 350px;
+	background:#cccfff;
+	padding: 10px;
+	border: 10px solid #fff;
+	
+}
+
+legend{
+	
+	font-size:25px;
+	
+}
+
+#formen{
+
+}
+
+p.label{
+	margin:21px 0 0;
+}
+
+p{
+	margin:0;
+}
+.hide{
+	display:none;
+}
+
+.tooltip {
+	position: absolute;
+	background-color: #666;
+	border: 1px solid #000;
+	color: #fff;
+	padding: 5px;
+	width: 142px;
+	text-align: center;
+	opacity:0.6;
+	filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.wrong {
+	background-color:#e18787;
+	width:150px;
+	border:1px solid #000000;
+	margin-top:3px;
+	margin-bottom:0px;
+	font-family:Garamond, serif;
+	font-size:15px;
+
+}
+
+#dim {
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:1;
+	height: 100%;
+	width: 100%;
+	background-color: #000000;
+	opacity: 0.5;
+}
+
+#popUp {
+	margin-top:-370px;
+	position:absolute;
+	z-index:10;
+	width:500px;
+	min-height:200px;
+	padding: 5px;
+	border: 1px solid #000000;
+	background:#FFFFFF;
+
+}

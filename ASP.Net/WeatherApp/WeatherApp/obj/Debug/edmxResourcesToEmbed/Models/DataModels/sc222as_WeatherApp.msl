@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sc222as_WeatherAppModelStoreContainer" CdmEntityContainer="sc222as_WeatherAppEntities">
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="sc222as_WeatherAppModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Pk_City_Id" ColumnName="Pk_City_Id" />
+          <ScalarProperty Name="NextUpdate" ColumnName="NextUpdate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ScreenName" ColumnName="ScreenName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Weathers">
+      <EntityTypeMapping TypeName="sc222as_WeatherAppModel.Weather">
+        <MappingFragment StoreEntitySet="Weather">
+          <ScalarProperty Name="Pk_Weather_Id" ColumnName="Pk_Weather_Id" />
+          <ScalarProperty Name="Temp1" ColumnName="Temp1" />
+          <ScalarProperty Name="Temp2" ColumnName="Temp2" />
+          <ScalarProperty Name="Temp3" ColumnName="Temp3" />
+          <ScalarProperty Name="Temp4" ColumnName="Temp4" />
+          <ScalarProperty Name="Temp5" ColumnName="Temp5" />
+          <ScalarProperty Name="Icon1" ColumnName="Icon1" />
+          <ScalarProperty Name="Icon2" ColumnName="Icon2" />
+          <ScalarProperty Name="Icon3" ColumnName="Icon3" />
+          <ScalarProperty Name="Icon4" ColumnName="Icon4" />
+          <ScalarProperty Name="Icon5" ColumnName="Icon5" />
+          <ScalarProperty Name="Created1" ColumnName="Created1" />
+          <ScalarProperty Name="Created2" ColumnName="Created2" />
+          <ScalarProperty Name="Created3" ColumnName="Created3" />
+          <ScalarProperty Name="Created4" ColumnName="Created4" />
+          <ScalarProperty Name="Created5" ColumnName="Created5" />
+          <ScalarProperty Name="Fk_City_Id" ColumnName="Fk_City_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

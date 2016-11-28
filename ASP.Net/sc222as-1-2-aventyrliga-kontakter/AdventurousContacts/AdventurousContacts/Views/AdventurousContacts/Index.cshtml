@@ -1,0 +1,38 @@
+﻿@model      IEnumerable<AdventurousContacts.Models.Contact>
+
+@{
+    ViewBag.Title = "Adventurous Contacts";
+}
+
+<h2>Kontaktlista</h2>
+
+@Html.ActionLink("Lägg till kontakt", "Create")
+
+@if (Model != null)
+{ 
+    <table>
+        <thead>
+            <tr>
+                <th>Förnamn</th>
+                <th>Efternamn</th>
+                <th>Emailaddress</th>                
+            </tr>
+        </thead>
+        <tbody>
+            
+            @foreach (var contact in Model)                                                         
+            {   
+                <tr>
+                    <td>@Html.DisplayFor(c => contact.FirstName)</td>
+                    <td>@Html.DisplayFor(c => contact.LastName)</td>
+                    <td>@Html.DisplayFor(c => contact.EmailAddress)</td>
+                    <td>
+                        @Html.ActionLink("Redigera", "Edit", new { id = contact.ContactID });
+                    @Html.ActionLink("Ta Bort", "Delete", new { id = contact.ContactID });
+                </td>
+            </tr>
+            }
+            
+        </tbody>
+    </table>
+}
